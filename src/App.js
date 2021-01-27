@@ -1,11 +1,11 @@
-import React from "react";
-import "./App.css";
-import Search from "./screens/Search";
-import ErrorSearch from "./screens/ErrorSearch";
-import HistoryPage from "./screens/HistoryPage";
-import SearchResult from "./screens/SearchResult";
-import MusicPage from "./screens/MusicPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import Search from './pages/Search';
+import ErrorSearch from './pages/ErrorSearch';
+import HistoryPage from './pages/HistoryPage';
+import SearchResult from './pages/SearchResult';
+import MusicPage from './pages/MusicPage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (

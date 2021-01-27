@@ -1,20 +1,24 @@
-import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import logo from "../assets/logo2.png";
-import search from "../assets/search2.png";
-import arrow from "../assets/arrow.png";
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import logo from '../assets/logo2.svg';
+import search from '../assets/search2.svg';
+import arrow from '../assets/arrow.svg';
 
 function MusicPage() {
   const history = useHistory();
-  const location = useLocation();
+  const [lyrics, setLyrics] = useState('');
+
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem('search'));
+    let ly = data.reverse();
+    setLyrics(ly[0].lyrics);
+  }, []);
+
   return (
     <div>
       <header>
-        <h1>Music Page</h1>
         <img src={logo} alt="Lendo Música" />
       </header>
-      <p>{location.state.lyrics}</p>
-
       <body>
         <button
           onClick={() => {
@@ -25,7 +29,7 @@ function MusicPage() {
           Voltar para a busca
         </button>
         <div>
-          <p>lorem ipsum</p>
+          <p>{lyrics}</p>
         </div>
         <h2>Curtiu? Busque mais letras.</h2>
         <button

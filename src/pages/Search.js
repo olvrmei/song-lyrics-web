@@ -1,41 +1,44 @@
-import React, { useState, useEffect } from "react";
-import "./Search.css";
-import { Link, useHistory } from "react-router-dom";
-import logo from "../assets/logo1.png";
-import search from "../assets/search1.png";
+import React, { useState } from 'react';
+import './Search.css';
+import { Link, useHistory } from 'react-router-dom';
+import logo from '../assets/logo1.svg';
+import search from '../assets/search1.svg';
+import api from '../services/lyricsapi.js';
 
 function Search() {
   const history = useHistory();
-  const [artist, setArtist] = useState("");
-  const [title, setTitle] = useState("");
+  const [artist, setArtist] = useState('');
+  const [title, setTitle] = useState('');
 
-  const getLyrics = async () => {
-    //if (artist === "" || title === "") return;
-    if (artist === "" || title === "") {
-      history.push("/errorsearch");
-    } else {
-      //const response = await fetch(
-      //  `https://api.lyrics.ovh/v1/${artist}/${title}`
-      //);
-      //
-      ////const lyrics = response.body.lyrics;
-      //alert(response.json());
-      const lyrics = "";
-      history.push("/searchresult", {
-        artist: artist,
-        title: title,
-        lyrics: lyrics,
-      });
+  async function getLyrics(e) {
+    e.preventDefault();
+    if (artist === '' || title === '') return;
+    try {
+      const response = await api.get(`${artist}/${title}`);
+      console.log(response.data);
+      const lyrics = response.data.lyrics;
+      if (lyrics === '') {
+        history.push('/errorsearch');
+      } else {
+        var data = [];
+        data = JSON.parse(localStorage.getItem('search')) || [];
+        data.push({
+          artist: artist,
+          title: title,
+          lyrics: lyrics,
+        });
+        localStorage.setItem('search', JSON.stringify(data));
+        history.push('/searchresult');
+      }
+    } catch (error) {
+      console.error(error);
+      history.push('/errorsearch');
     }
-  };
-  useEffect(() => {
-    console.log("hiii");
-  }, [artist, title]);
+  }
 
   return (
     <div className="Search">
       <header>
-        <h1 style={{ color: "white" }}>Search Page</h1>
         <img src={logo} alt="Lendo Música" />
       </header>
       <body className="Search-body">
@@ -61,7 +64,7 @@ function Search() {
               onChange={(val) => setTitle(val.target.value)}
             />
           </label>
-          <button type="submit">
+          <button className="Search-button" type="submit">
             <img src={search} alt="Lupa" />
             Buscar
           </button>

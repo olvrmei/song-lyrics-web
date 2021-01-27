@@ -1,0 +1,17 @@
+.Search-button {
+  background: transparent;
+  border: 1px solid #ffb703;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.Button-space {
+  display: flex;
+  flex-direction: row;
+  padding: 14px;
+}
+
+.Button-text {
+  color: #ffb703;
+  font: 1em sans-serif;
+}
