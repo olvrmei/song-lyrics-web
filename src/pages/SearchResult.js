@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
+import { Container } from '../globalStyles';
 
 function SearchResult() {
   const [artist, setArtist] = useState('');
@@ -14,7 +15,7 @@ function SearchResult() {
     setTitle(ly[0].title);
   }, []);
   return (
-    <div>
+    <Container>
       <Header />
       <h1>Letra encontrada</h1>
 
@@ -28,7 +29,7 @@ function SearchResult() {
       <h2>Não encontrou o que procurava?</h2>
 
       <SearchButton goBack={-1}>Nova Busca</SearchButton>
-    </div>
+    </Container>
   );
 }
 

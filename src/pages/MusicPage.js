@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Header from '../components/Header';
 import arrow from '../assets/arrow.svg';
 import SearchButton from '../components/SearchButton';
+import { Container } from '../globalStyles';
 
 function MusicPage() {
   const history = useHistory();
@@ -15,26 +16,24 @@ function MusicPage() {
   }, []);
 
   return (
-    <div>
+    <Container>
       <Header isSelected={true}></Header>
-      <body>
-        <button
-          onClick={() => {
-            history.goBack();
-          }}
-        >
-          <img src={arrow} alt="Seta" />
-          Voltar para a busca
-        </button>
-        <div>
-          <p>{lyrics}</p>
-        </div>
-        <h2>Curtiu? Busque mais letras.</h2>
-        <SearchButton isSelected={true} goBack={-2}>
-          Nova busca
-        </SearchButton>
-      </body>
-    </div>
+      <button
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        <img src={arrow} alt="Seta" />
+        Voltar para a busca
+      </button>
+      <div>
+        <p>{lyrics}</p>
+      </div>
+      <h2>Curtiu? Busque mais letras.</h2>
+      <SearchButton isSelected={true} goBack={-2}>
+        Nova busca
+      </SearchButton>
+    </Container>
   );
 }
 

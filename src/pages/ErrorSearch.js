@@ -2,10 +2,11 @@ import React from 'react';
 import Header from '../components/Header';
 import illustration from '../assets/illustration.svg';
 import SearchButton from '../components/SearchButton';
+import { Container } from '../globalStyles';
 
 function ErrorSearch() {
   return (
-    <div>
+    <Container>
       <Header />
 
       <h1>Letra não encontrada</h1>
@@ -18,7 +19,7 @@ function ErrorSearch() {
       </p>
 
       <SearchButton goBack={-1}>Nova busca</SearchButton>
-    </div>
+    </Container>
   );
 }
 

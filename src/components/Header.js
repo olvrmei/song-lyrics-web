@@ -5,6 +5,9 @@ import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
   background: ${(props) => (props.isSelected ? 'white' : 'transparent')};
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
 `;
 
 const Header = ({ isSelected, children }) => {

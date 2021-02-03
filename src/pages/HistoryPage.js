@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
+import { Container } from '../globalStyles';
 
 function SongList(props) {
   const songs = props.songs;
@@ -41,7 +42,7 @@ function HistoryPage() {
   };
 
   return (
-    <div>
+    <Container>
       <Header />
 
       <div>
@@ -50,7 +51,7 @@ function HistoryPage() {
       <div>
         <SearchButton goBack={-1}>Buscar</SearchButton>
       </div>
-    </div>
+    </Container>
   );
 }
 
