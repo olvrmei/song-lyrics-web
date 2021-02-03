@@ -4,7 +4,7 @@ import illustration from '../assets/illustration.svg';
 import SearchButton from '../components/SearchButton';
 import { Container } from '../globalStyles';
 
-function ErrorSearch() {
+function ErrorPage() {
   return (
     <Container>
       <Header />
@@ -23,4 +23,4 @@ function ErrorSearch() {
   );
 }
 
-export default ErrorSearch;
+export default ErrorPage;

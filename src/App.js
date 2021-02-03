@@ -1,8 +1,8 @@
 import React from 'react';
-import Search from './pages/Search';
-import ErrorSearch from './pages/ErrorSearch';
+import SearchPage from './pages/SearchPage';
+import ErrorPage from './pages/ErrorPage';
 import HistoryPage from './pages/HistoryPage';
-import SearchResult from './pages/SearchResult';
+import ResultPage from './pages/ResultPage';
 import MusicPage from './pages/MusicPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles';
@@ -12,10 +12,10 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route path="/" exact component={Search} />
-        <Route path="/errorsearch" component={ErrorSearch} />
+        <Route path="/" exact component={SearchPage} />
+        <Route path="/errorsearch" component={ErrorPage} />
         <Route path="/historypage" component={HistoryPage} />
-        <Route path="/searchresult" component={SearchResult} />
+        <Route path="/searchresult" component={ResultPage} />
         <Route path="/musicpage" component={MusicPage} />
       </Switch>
     </Router>

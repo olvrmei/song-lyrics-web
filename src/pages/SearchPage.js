@@ -5,7 +5,7 @@ import search from '../assets/search1.svg';
 import api from '../services/lyricsapi.js';
 import { Container } from '../globalStyles';
 
-function Search() {
+function SearchPage() {
   const history = useHistory();
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
@@ -75,4 +75,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchPage;

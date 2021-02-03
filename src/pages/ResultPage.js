@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
 import { Container } from '../globalStyles';
 
-function SearchResult() {
+function ResultPage() {
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
 
@@ -33,4 +33,4 @@ function SearchResult() {
   );
 }
 
-export default SearchResult;
+export default ResultPage;
