@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Search.css';
 import { Link, useHistory } from 'react-router-dom';
-import logo from '../assets/logo1.svg';
+import Header from '../components/Header';
 import search from '../assets/search1.svg';
 import api from '../services/lyricsapi.js';
 
@@ -38,9 +38,7 @@ function Search() {
 
   return (
     <div className="Search">
-      <header>
-        <img src={logo} alt="Lendo Música" />
-      </header>
+      <Header />
       <body className="Search-body">
         <h2 className="Search-search">Buscar letra</h2>
         <form className="Search-form" onSubmit={getLyrics}>

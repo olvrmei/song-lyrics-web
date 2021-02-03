@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo1.svg';
+import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
 
 function SearchResult() {
@@ -15,9 +15,7 @@ function SearchResult() {
   }, []);
   return (
     <div>
-      <header>
-        <img src={logo} alt="Lendo Música" />
-      </header>
+      <Header />
       <h1>Letra encontrada</h1>
 
       <Link to={'/musicpage'}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import logo from '../assets/logo2.svg';
+import Header from '../components/Header';
 import arrow from '../assets/arrow.svg';
 import SearchButton from '../components/SearchButton';
 
@@ -16,9 +16,7 @@ function MusicPage() {
 
   return (
     <div>
-      <header>
-        <img src={logo} alt="Lendo Música" />
-      </header>
+      <Header isSelected={true}></Header>
       <body>
         <button
           onClick={() => {

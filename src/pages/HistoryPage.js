@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../assets/logo1.svg';
+import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
 
 function SongList(props) {
@@ -42,9 +42,7 @@ function HistoryPage() {
 
   return (
     <div>
-      <header>
-        <img src={logo} alt="Lendo Música" />
-      </header>
+      <Header />
 
       <div>
         <SongList songs={songs} delete={deleteSearches} />

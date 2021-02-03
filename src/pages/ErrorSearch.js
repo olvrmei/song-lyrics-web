@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from '../assets/logo1.svg';
+import Header from '../components/Header';
 import illustration from '../assets/illustration.svg';
 import SearchButton from '../components/SearchButton';
 
 function ErrorSearch() {
   return (
     <div>
-      <header>
-        <img src={logo} alt="Lendo Música" />
-      </header>
+      <Header />
 
       <h1>Letra não encontrada</h1>
 
