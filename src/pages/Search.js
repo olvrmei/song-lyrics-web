@@ -12,7 +12,7 @@ function Search() {
 
   async function getLyrics(e) {
     e.preventDefault();
-    if (artist === '' || title === '') return;
+    //if (artist === '' || title === '') return;
     try {
       const response = await api.get(`${artist}/${title}`);
       console.log(response.data);
@@ -44,24 +44,28 @@ function Search() {
       <body className="Search-body">
         <h2 className="Search-search">Buscar letra</h2>
         <form className="Search-form" onSubmit={getLyrics}>
-          <label className="Search-label">
+          <label for="artista" className="Search-label">
             Artista
             <input
               className="Search-input"
               type="text"
+              name="artista"
               placeholder="Insira o nome do artista"
               value={artist}
               onChange={(val) => setArtist(val.target.value)}
+              required
             />
           </label>
-          <label className="Search-label">
+          <label for="title" className="Search-label">
             Música
             <input
               className="Search-input"
               type="text"
+              name="title"
               placeholder="Insira o nome da música"
               value={title}
               onChange={(val) => setTitle(val.target.value)}
+              required
             />
           </label>
           <button className="Search-button" type="submit">

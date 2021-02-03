@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from '../assets/logo2.svg';
-import search from '../assets/search2.svg';
 import arrow from '../assets/arrow.svg';
+import SearchButton from '../components/SearchButton';
 
 function MusicPage() {
   const history = useHistory();
@@ -32,14 +32,9 @@ function MusicPage() {
           <p>{lyrics}</p>
         </div>
         <h2>Curtiu? Busque mais letras.</h2>
-        <button
-          onClick={() => {
-            history.go(-2);
-          }}
-        >
-          <img src={search} alt="Lupa" />
+        <SearchButton isSelected={true} goBack={-2}>
           Nova busca
-        </button>
+        </SearchButton>
       </body>
     </div>
   );

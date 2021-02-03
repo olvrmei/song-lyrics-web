@@ -19,7 +19,7 @@ function ErrorSearch() {
         acessar milhares de músicas realizando uma nova busca &lt;3
       </p>
 
-      <SearchButton label={'Nova busca'} />
+      <SearchButton goBack={-1}>Nova busca</SearchButton>
     </div>
   );
 }

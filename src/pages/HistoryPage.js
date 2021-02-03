@@ -50,7 +50,7 @@ function HistoryPage() {
         <SongList songs={songs} delete={deleteSearches} />
       </div>
       <div>
-        <SearchButton label={'Buscar'} />
+        <SearchButton goBack={-1}>Buscar</SearchButton>
       </div>
     </div>
   );

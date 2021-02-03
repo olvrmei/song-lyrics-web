@@ -29,7 +29,7 @@ function SearchResult() {
 
       <h2>Não encontrou o que procurava?</h2>
 
-      <SearchButton label={'Nova Busca'} />
+      <SearchButton goBack={-1}>Nova Busca</SearchButton>
     </div>
   );
 }
