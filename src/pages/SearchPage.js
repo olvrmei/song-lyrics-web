@@ -1,9 +1,59 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Header from '../components/Header';
+import SearchButton from '../components/SearchButton';
 import search from '../assets/search1.svg';
 import api from '../services/lyricsapi.js';
-import { Container } from '../globalStyles';
+import { Container, Title } from '../globalStyles';
+import styled from 'styled-components';
+
+const HistoryButton = styled.button`
+  padding: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ffb703;
+  box-sizing: border-box;
+  border: 2px solid #ffb703;
+  border-radius: 4px;
+`;
+
+const SearchButtons = styled.button`
+  border: 2px solid #ffb703;
+  box-sizing: border-box;
+  border-radius: 4px;
+  max-width: 800px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+/*
+const ButtonContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 14px;
+  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
+`;
+
+const ButtonText = styled.p`
+  color: ${(props) => (props.isSelected ? 'white' : '#ffb703')};
+  font: 1em sans-serif;
+  margin-left: 20px;
+  align-self: center;
+  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
+`;
+
+*/
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+`;
 
 function SearchPage() {
   const history = useHistory();
@@ -39,9 +89,9 @@ function SearchPage() {
   return (
     <Container>
       <Header />
-      <h2>Buscar letra</h2>
-      <form onSubmit={getLyrics}>
-        <label for="artista">
+      <Title>Buscar letra</Title>
+      <Form onSubmit={getLyrics}>
+        <Label for="artista">
           Artista
           <input
             type="text"
@@ -51,8 +101,8 @@ function SearchPage() {
             onChange={(val) => setArtist(val.target.value)}
             required
           />
-        </label>
-        <label for="title">
+        </Label>
+        <Label for="title">
           Música
           <input
             type="text"
@@ -62,14 +112,15 @@ function SearchPage() {
             onChange={(val) => setTitle(val.target.value)}
             required
           />
-        </label>
-        <button type="submit">
+        </Label>
+        <SearchButtons type="submit">
           <img src={search} alt="Lupa" />
-          Buscar
-        </button>
-      </form>
+          <p>Buscar</p>
+        </SearchButtons>
+      </Form>
+
       <Link to="/historypage">
-        <button>Últimas buscas</button>
+        <HistoryButton>Últimas buscas</HistoryButton>
       </Link>
     </Container>
   );

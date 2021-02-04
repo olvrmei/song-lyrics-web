@@ -2,7 +2,35 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import SearchButton from '../components/SearchButton';
-import { Container } from '../globalStyles';
+import { Container, Title } from '../globalStyles';
+import styled from 'styled-components';
+
+const BottomText = styled.h2`
+  font-size: 18;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+`;
+
+const Button = styled.button`
+  background-color: #219ebc;
+
+  box-sizing: border-box;
+  max-width: 800px;
+  min-width: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 30px;
+  border: 2px solid #219ebc;
+  border-radius: 4px;
+
+  color: white;
+  text-transform: capitalize;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 18px;
+`;
 
 function ResultPage() {
   const [artist, setArtist] = useState('');
@@ -14,19 +42,19 @@ function ResultPage() {
     setArtist(ly[0].artist);
     setTitle(ly[0].title);
   }, []);
+
   return (
     <Container>
       <Header />
-      <h1>Letra encontrada</h1>
+      <Title>Letra encontrada</Title>
 
       <Link to={'/musicpage'}>
-        <button>
-          <p>{artist}</p>
-          <p>{title}</p>
-        </button>
+        <Button>
+          {artist} <br /> {title}
+        </Button>
       </Link>
 
-      <h2>Não encontrou o que procurava?</h2>
+      <BottomText>Não encontrou o que procurava?</BottomText>
 
       <SearchButton goBack={-1}>Nova Busca</SearchButton>
     </Container>

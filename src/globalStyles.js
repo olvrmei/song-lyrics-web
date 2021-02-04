@@ -26,4 +26,11 @@ export const Container = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  font-size: 24;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 30px;
+`;
+
 export default GlobalStyle;
