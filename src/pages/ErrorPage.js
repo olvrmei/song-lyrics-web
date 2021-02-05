@@ -6,14 +6,14 @@ import { Container, Title } from '../globalStyles';
 import styled from 'styled-components';
 
 const Image = styled.img`
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 `;
 
 const Text = styled.p`
-  font-size: 16;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  //margin-top: 20px;
+  margin-bottom: 40px;
   color: white;
   max-width: 500px;
   text-align: center;

@@ -4,32 +4,29 @@ import search from '../assets/search1.svg';
 import search2 from '../assets/search2.svg';
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
   border: 2px solid ${(props) => (props.isSelected ? '#219EBC' : '#ffb703')};
   box-sizing: border-box;
   border-radius: 4px;
-  max-width: 800px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  //max-width: 800px;
+  //min-width: 100px;
+  width: 340px;
+  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
 `;
 
-const ButtonContent = styled.div`
+export const ButtonContent = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 14px;
-  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
+  padding: 15px;
+  justify-content: center;
 `;
 
-const ButtonText = styled.p`
+export const ButtonText = styled.p`
   color: ${(props) => (props.isSelected ? 'white' : '#ffb703')};
-  font: 1em sans-serif;
-  margin-left: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 15px;
   align-self: center;
-  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
-`;
-
-const Image = styled.img`
-  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
 `;
 
 const SearchButton = ({ goBack, isSelected, children }) => {
@@ -42,7 +39,7 @@ const SearchButton = ({ goBack, isSelected, children }) => {
       }}
     >
       <ButtonContent isSelected={isSelected}>
-        <Image src={isSelected ? search2 : search} alt="Lupa" />
+        <img src={isSelected ? search2 : search} alt="Lupa" />
         <ButtonText isSelected={isSelected}>{children}</ButtonText>
       </ButtonContent>
     </Button>

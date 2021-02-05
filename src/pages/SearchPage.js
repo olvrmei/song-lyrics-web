@@ -1,58 +1,53 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Header from '../components/Header';
-import SearchButton from '../components/SearchButton';
+import { ButtonContent, ButtonText, Button } from '../components/SearchButton';
 import search from '../assets/search1.svg';
 import api from '../services/lyricsapi.js';
 import { Container, Title } from '../globalStyles';
 import styled from 'styled-components';
 
 const HistoryButton = styled.button`
-  padding: 14px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-top: 40px;
   color: #ffb703;
   box-sizing: border-box;
   border: 2px solid #ffb703;
   border-radius: 4px;
+  background: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  width: 340px;
 `;
-
-const SearchButtons = styled.button`
-  border: 2px solid #ffb703;
-  box-sizing: border-box;
-  border-radius: 4px;
-  max-width: 800px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-`;
-
-/*
-const ButtonContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 14px;
-  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
-`;
-
-const ButtonText = styled.p`
-  color: ${(props) => (props.isSelected ? 'white' : '#ffb703')};
-  font: 1em sans-serif;
-  margin-left: 20px;
-  align-self: center;
-  background: ${(props) => (props.isSelected ? '#219EBC' : 'transparent')};
-`;
-
-*/
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 `;
 
 const Label = styled.label`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+`;
+
+const Input = styled.input`
+  border: 2px solid white;
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+  margin-top: 15px;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    color: #828282;
+  }
 `;
 
 function SearchPage() {
@@ -93,7 +88,7 @@ function SearchPage() {
       <Form onSubmit={getLyrics}>
         <Label for="artista">
           Artista
-          <input
+          <Input
             type="text"
             name="artista"
             placeholder="Insira o nome do artista"
@@ -104,7 +99,7 @@ function SearchPage() {
         </Label>
         <Label for="title">
           Música
-          <input
+          <Input
             type="text"
             name="title"
             placeholder="Insira o nome da música"
@@ -113,10 +108,12 @@ function SearchPage() {
             required
           />
         </Label>
-        <SearchButtons type="submit">
-          <img src={search} alt="Lupa" />
-          <p>Buscar</p>
-        </SearchButtons>
+        <Button type="submit">
+          <ButtonContent>
+            <img src={search} alt="Lupa" />
+            <ButtonText>Buscar</ButtonText>
+          </ButtonContent>
+        </Button>
       </Form>
 
       <Link to="/historypage">

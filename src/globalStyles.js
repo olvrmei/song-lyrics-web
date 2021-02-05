@@ -5,13 +5,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing:border-box;
     margin: 0;
     padding: 0;
-    background: grey;
 }
 `;
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 1300px;
+  width: 100vw;
+  height: 100vh;
   margin-right: auto;
   margin-left: auto;
   padding-right: 100px;
@@ -19,6 +18,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: ${(props) =>
+    props.primary ? 'white' : 'linear-gradient(#023047, #000000)'};
 
   @media screen and (max-width: 990px) {
     padding-right: 50px;
@@ -27,10 +28,9 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 24;
+  font-size: 24px;
   color: white;
-  margin-bottom: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 export default GlobalStyle;

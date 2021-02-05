@@ -7,15 +7,22 @@ import { Container } from '../globalStyles';
 import styled from 'styled-components';
 
 const BackButton = styled.button`
+  display: flex;
+  flex-direction: row;
   background-color: white;
-  margin-bottom: 20px;
-  margin-top: 20px;
   color: #219ebc;
-  padding: 20px;
-  border: solid transparent;
+  border: 2px solid transparent;
+  justify-content: center;
+  align-content: center;
 `;
 
-const Title = styled.p`
+const BackButtonText = styled.p`
+  padding-left: 10px;
+  align-self: center;
+  font-size: 16px;
+`;
+
+const Title = styled.h1`
   font-weight: bold;
   text-align: left;
   font-size: 24px;
@@ -29,6 +36,14 @@ const Text = styled.p`
   line-height: 2;
   margin-bottom: 20px;
   margin-top: 20px;
+`;
+
+const BottomText = styled.h2`
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 function MusicPage() {
@@ -45,22 +60,22 @@ function MusicPage() {
 
   return (
     <>
-      <Header isSelected={true}>
+      <Header primary>
         <BackButton
           onClick={() => {
             history.goBack();
           }}
         >
           <img src={arrow} alt="Seta" />
-          <p>Voltar para a busca</p>
+          <BackButtonText>Voltar para a busca</BackButtonText>
         </BackButton>
       </Header>
-      <Container>
+      <Container primary>
         <div>
           <Title>{title}</Title>
           <Text>{lyrics}</Text>
         </div>
-        <h2>Curtiu? Busque mais letras.</h2>
+        <BottomText>Curtiu? Busque mais letras.</BottomText>
         <SearchButton isSelected={true} goBack={-2}>
           Nova busca
         </SearchButton>

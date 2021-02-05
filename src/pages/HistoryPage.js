@@ -13,14 +13,17 @@ const CleanButton = styled.button`
   border-radius: 40px;
   border: 2px solid white;
   width: 300px;
+  font-size: 16px;
 `;
 
 const Ul = styled.ul`
+  margin-top: 20px;
+  margin-bottom: 40px;
   list-style-type: none;
-  margin: auto;
-  width: 400px;
+  width: 340px;
   text-align: center;
   text-transform: capitalize;
+  font-size: 16px;
 `;
 
 const List = styled.li`
@@ -42,7 +45,7 @@ function SongList(props) {
           color: 'white',
           fontSize: 18,
           marginTop: 20,
-          marginBottom: 20,
+          marginBottom: 40,
         }}
       >
         Histórico de pesquisas está vazio.

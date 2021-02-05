@@ -6,10 +6,12 @@ import { Container, Title } from '../globalStyles';
 import styled from 'styled-components';
 
 const BottomText = styled.h2`
-  font-size: 18;
+  font-size: 18px;
+  font-weight: bold;
   color: white;
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 20px;
 `;
 
 const Button = styled.button`
@@ -18,8 +20,8 @@ const Button = styled.button`
   box-sizing: border-box;
   max-width: 800px;
   min-width: 300px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
   padding: 30px;
   border: 2px solid #219ebc;
   border-radius: 4px;
