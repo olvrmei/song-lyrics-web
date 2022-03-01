@@ -2,12 +2,37 @@
   <img alt="Logo" src="/src/assets/logo1.svg">
 </p>
 
----
+## 
 
 <p align="center">
-  Website version of Lendo Música app. An application for searching music lyrics.
+  Website version of the Lendo Música mobile app! A web application for searching music lyrics.
+  </p>
+  <p align="center">
 This project was developed for React, HTML, CSS, and styled-components learning purposes.
-Using: <a href="https://lyricsovh.docs.apiary.io/#">lyrics.ovh</a>
+  </p>
+  <p align="center">
+API used for requesting the lyrics: <a href="https://lyricsovh.docs.apiary.io/#">lyrics.ovh</a>
 </p>
 
+<!-- Add deployed website app link -->
+
+<p align="center">
+   📱 Check out the mobile app <a href="https://github.com/olvrmei/song-lyrics-app">here</a>!
+</p>
+
+## 🎵 About the web app:
+
+<p align="center">
+  Lendo Música is an application in which you can find the lyrics of a song by inputting the name of the song and artist. It also features a history of all your searches!
+</p>
+
+<!-- Add images -->
+
+## 🔨 Built using:
+- Javascript
+- HTML/CSS
+- React
+- Styled-Components
+- Axios
+- React Router
 
